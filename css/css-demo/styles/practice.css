@@ -13,3 +13,8 @@
 .accomplishments {
   font-size: .8em;
 }
+
+.accomplishments > .featured {
+  background-color: red; 
+  font-size: 1.2em; 
+}
