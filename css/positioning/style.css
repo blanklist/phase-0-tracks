@@ -1,0 +1,24 @@
+#container {
+  position: relative;
+}
+
+
+#octopus {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  right: 50%;
+}
+
+#glasses {
+  position: relative;
+  top: 52px;
+  left: 52%;
+  z-index: 1;
+}
+
+#hat {
+  position: relative;
+  left: 42%;
+  z-index: 1;
+}
