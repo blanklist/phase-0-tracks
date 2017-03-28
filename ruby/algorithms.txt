@@ -1,0 +1,5 @@
+Elevator operator (assuming that we begin inside of the elevator):
+
+- scan elevator for panel with multiple buttons. there will be numbered buttons and other labels.
+  - request from your Human Overlord the appropriate floor number.
+  - press the corresponding 
