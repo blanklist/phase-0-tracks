@@ -1,5 +1,30 @@
-Elevator operator (assuming that we begin inside of the elevator):
+Elevator operator:
 
-- scan elevator for panel with multiple buttons. there will be numbered buttons and other labels.
+- elevators will have doors without handles accompanied on an adjacent wall by a small panel with two buttons arranged vertically
+  - once located, ask your Human Overlord the question, "Up or Down"
+    - if up, press the higher button
+    - if down, press the lower button
+- Wait until the elevator doors open fully accompanied by a 'ding' sound.
+- enter elevator 
+- scan interior of elevator for panel with multiple buttons. there will be numbered buttons and other labels.
   - request from your Human Overlord the appropriate floor number.
-  - press the corresponding 
+  - press the corresponding button labeled with the number received.
+- Wait until doors open fully
+- proceed onto desired floor
+
+Frozen Pizza:
+
+- enter kitchen
+- locate oven and set temperature to 400 degrees and set other dial to 'bake'
+- find tall self-standing box, this is the refrigerator
+  - open upper section of refrigerator
+  - locate thin box approximately one foot square with "Pizza" printed on it
+  - remove this box from refrigerator
+- remove all contents of box
+  - unwrap edible yet frozen pizza from any plastic casing or cardboard platter
+- wait for oven to 'pre-heat' which will be distinguished by a red light going off
+- carefully place pizza on rack inside of oven
+- set timer for 18 minutes
+- wait for timer to go off before removing pizza.
+- let pizza cool slightly before cutting
+- enjoy
