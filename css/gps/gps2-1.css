@@ -1,0 +1,42 @@
+* {
+  font-family: "Helvetica";
+}
+
+h1, h2 {
+  color: white;
+}
+
+p {
+  font-family: Cambria;
+}
+
+header {
+  display: block;
+  background-color: blue;
+  padding: 5px;
+}
+
+.column-1 {
+  display: inline-block;
+  width: 45%;
+  background: green;
+  margin: 5px;
+  padding: 5px;
+  vertical-align: top;
+  background-image: url(http://www.clipartsgram.com/image/1476554641-lime-green-colored-fabric-with-floral-pattern-texture.jpg);
+}
+
+.column-2 {
+  display: inline-block;
+  width: 45%;
+  background: red;
+  margin: 5px;
+  padding: 5px;
+  vertical-align: top;
+  float: right;
+}
+
+footer {
+  display: block;
+  background: yellow;
+}
