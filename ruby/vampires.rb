@@ -47,5 +47,7 @@ while count > 0
 	end
 p result
 count -= 1
+puts
 end
 
+p "Actually\, never mind\! What do these questions have to do with anything\? Let\'s all be friends."
