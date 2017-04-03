@@ -1,0 +1,24 @@
+1. A variable is an unknown value assigned to a name. The value can be declared or changed and referenced via the original name.
+2. The variable full_name will be the addition of the strings first_name and last_name thus, "AbrahamLincoln".
+3. string - text data. any data set in quotes can be considered strings. numbers in quotes will be treated as text (as opposed to having a numerical value).
+  integer - real whole numbers used without quotes. used for calculations or to keep tally.
+  float - real numbers with decimal points to represent values less than whole numbers.
+  nil - special to ruby. the absence of a value. variables that have not been set will have a nil value. 
+  boolean - true or false. in if/else statements the boolean value of the if statement is evaluated as true or false in order to perform the lines of code below or skip.
+4. An algorithm is a finite list of instructions to complete a specific task. 
+5. Brute force and divide and conquer are two common categories of algorithms.
+6. A method is a set of expressions that return a value. If a programmer finds a task which needs to be repeated a method can be written in order to automate the task and save steps.
+7. return value - a method will return the result of the last line of a method unless an explicit return comes earlier in the method
+  side effect - a result of a method which is not its return value. a puts statement inside of a method will cause the side effect of output to the console.
+  parameter - variables local to the method. they are listed in parenthesis after the method name and inputed when the method is called.
+  argument - the specific parameters of a variable. they can be assigned when the method is called or have default values set for when their values are not assigned.
+  implicit return - as ruby returns the evaluated last line of code, implicit return simply means a lacking of the word 'return' in that last line of code.
+8. Global scope is the environment at the base level of the program and available to the whole program. Method scope is limited to the environment of the method. Variables will be limited to that environment and will not apply to the global scope. The return value will be available outside of a method.
+9. Control flow has to do with decision making within a program. Based on user input or on evaluation of values or variables, different actions can occur.
+10. loop - used to complete a specific set of tasks repeatedly.
+  if - tests for truthy-ness of a statement. If true, the immediate lines below will be executed. Otherwise those lines will be skipped.
+  else - complements an if statement. If the initial statement is found false the lines following the else will be executed.
+  elsif - a continuation of if statements. After the original if, and elsif can present another statement for evaluation.
+  while - used to perform a task 'while' a certain statement is true.
+  until - inverse of while statement.
+   
