@@ -66,8 +66,8 @@ end
 unsorted = [4, 3, 2]
 p bubble_sort(unsorted)
 
-
-
+unsorted = [34, 22, 1, 0, 5]
+p bubble_sort(unsorted)
 
 
 
