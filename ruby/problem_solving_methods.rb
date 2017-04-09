@@ -50,17 +50,17 @@ p fib(7)
 # repeats until no swaps needed
 
 def bubble_sort(unsorted)
-	loop do
-	  swapped = false 
-	  (unsorted.length - 1).times do |i|
-		  if unsorted[i] > unsorted[i + 1]
+	loop do                        # do loop until reaches a break
+	  swapped = false              # swapped set to false 
+	  (unsorted.length - 1).times do |i|    # swap elements for length minus one (the number of spaces between elements)
+		  if unsorted[i] > unsorted[i + 1]    
 		  	unsorted[i], unsorted[i + 1] = unsorted[i + 1], unsorted[i]
-		    swapped = true
+		    swapped = true                    # swapped is set to true whenever the array was found not completely sorted 
 		  end
 		end
-		break if not swapped
+		break if not swapped                  # if swapped remained false (no elements unsorted) break out of do loop
 	end
-	unsorted
+	unsorted                                # return 'unsorted' (this is a bad variable name) as it was changed into a sorted array in place
 end 
 
 unsorted = [4, 3, 2]
@@ -68,8 +68,3 @@ p bubble_sort(unsorted)
 
 unsorted = [34, 22, 1, 0, 5]
 p bubble_sort(unsorted)
-
-
-
-
-
