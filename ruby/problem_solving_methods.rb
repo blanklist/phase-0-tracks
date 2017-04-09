@@ -30,15 +30,15 @@ p simple_search(arr, target)
 # output << fibonacci
 
 def fib(index)
-  output = [0, 1]
-  i = 1
-  index = index - 2
-  index.times do
-  	z = output[i] + output[i - 1]
-  	output << z
-  	i += 1
+  output = [0, 1]                        # need starting point of two numbers to add together
+  i = 1                                  # set index at 1 so that we can get that number and the number before it
+  index = index - 2                      # I don't like this step but it makes up for the two numbers already in output
+  index.times do                         # take the user input of 'index' and create that number of fibonacci numbers (minus the two that we already created (line 33))
+  	z = output[i] + output[i - 1]        # generate a new fibonacci number from the summation of two previous elements
+  	output << z                          # shovel newly generated fibonacci number into array at last index position
+  	i += 1                               # increase our index count
   end
-  output
+  output                                 # return output array
 end
 
 p fib(7)

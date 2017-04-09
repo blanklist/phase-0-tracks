@@ -1,0 +1,9 @@
+1. Data structures offer a way to organize information.
+2. Array is an ordered integered-indexed set of data.
+3. Examples of arrays: items of a grocery store inventory: [apples, oranges, mangoes]. List of integers: [3, 5, 6, 2]. Arrays can have mixed data types also.
+4. Hash is similar to array in that it is a list. Instead of integer-indexed, Hashes are a list of key/value pairs.
+5. Examples of hash: positions/names of a sports team: {center-field: "Some Guy", Second-base: "Other Guy"}. Description of characteristics: {name: "Bill", age: 39, height: '5/'8/"', weight: 185}
+6. Iteration is useful in completing a repetitive task to any collection of data stored in an array or hash. As arrays or hashes group associated data, there are often tasks which need to be completed to each element of those data collections.
+7. Examples of iteration: completing a mathematical equation for each element. Printing a hash with added formatting.
+8. Blocks are sections of codes often associated with method invocations. Using 'yield' a block can be called multiple times in other contexts.
+9. Parameters in blocks represent the elements of arrays or hashes that will be iterated through. They are placed between "|" in the beginning of the block.
