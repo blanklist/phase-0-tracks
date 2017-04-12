@@ -27,6 +27,8 @@ def add_item(list, item, quantity = 1)
 end
 
 add_item(example_list, "nutela", 4)
+add_item(example_list, "donuts")
+
 
 # Method to remove an item from the list
 def remove_item(list, item)
