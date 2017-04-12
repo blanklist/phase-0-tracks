@@ -63,7 +63,6 @@ def update_item(list, item, quantity)
 # output: updated list with new quantity
 end
 
-
 example_list = create_list("")
 add_item(example_list, "Lemondade", 2)
 add_item(example_list, "Tomatoes", 3)
@@ -72,3 +71,12 @@ add_item(example_list, "Ice Cream", 4)
 remove_item(example_list, "Lemondade")
 update_item(example_list, "Ice Cream", 1)
 print_list(example_list)
+
+
+## RELEASE 4: REFLECT
+# I encouraged my pair to urge me to write more pseudocode than I'm accustomed to. Once we had made very specific pseudocode, the structure of each method was obvious. Also, pseudocode can be adjusted - added to/removed - while the code is being written. It may be much smoother if pseudocode is ignored or skipped as opposed needing it to be more specific and thorough.
+# Arrays don't seem appropriate to me as they would overcomplicate the storing of quantity. 
+# A method returns the content of its last line of code, with exceptions.
+# You can pass variables of any datatype and other methods into methods as arguments.
+# This is how methods pass information to one another.
+# I'd like to see more examples of these techniques - keeping methods small and of singular use - so that I have a better practical grasp of scope and method interaction.
