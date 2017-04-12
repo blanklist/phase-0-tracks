@@ -45,6 +45,7 @@ p santas[1].celebrate_birthday
 p santas[0].get_mad_at("Prancer")
 
 p santas[2].gender = example_genders[3]
+p santas[3].age
 
 100.times do |santa|
 	santa = Santa.new(example_genders.sample, example_ethnicities.sample)
