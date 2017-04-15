@@ -4,20 +4,18 @@ class TodoList
 	end
 
   def get_items
-  	puts @arr  
+  	p @arr  
   end
 
-
-
 	def add_item(str)
+	  @arr << str
 	end
 
 	def delete_item(str)
+	  @arr.delete(str)
 	end
 
 	def get_item(n)
+		p @arr[n]
 	end
 end
-
-grocery_list = TodoList.new(["do the dishes", "mow the lawn"])
-grocery_list.get_items
