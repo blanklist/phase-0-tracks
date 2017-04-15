@@ -30,8 +30,19 @@ class Guess
     p @user2_stats
   end
 
+  def word_guess(word)
+  	if word == @correct_word
+  		p "success! well done"
+  	else
+  		p "Noop. Are you feeling alright?"
+  	end
+  end
+
+
 end
 
 current_game = Guess.new("example")
 current_game.letter_guess("e")
 current_game.letter_guess("m")
+current_game.word_guess("rudabega")
+current_game.word_guess("example")

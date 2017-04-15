@@ -14,6 +14,9 @@ describe Guess do
   	expect(current_game.in_progress_word).to eq("e__m__e")
   end
 
-  it "checks user word guess against actual word and "
+  it "checks user word guess against actual word and returns success or failure" do
+    expect(current_game.word_guess("example")).to eq("success! well done")
+    expect(current_game.word_guess("rudabega")).to eq("Noop. Are you feeling alright?")
+  end
 	
 end
