@@ -1,0 +1,33 @@
+
+
+
+states (updated continually):
+
+correct_word = [].join('')
+in_progress_word = []
+number of guesses
+user info: number of guesses/available
+	guesser or word provider
+
+
+
+behaviors: (methods)
+
+full_word_guess
+I'd like to guess the word Pat Sajak
+
+single_letter_guess
+can I get an 'n', Joe?
+
+"repeated guesses do not count against the user" what the fuck does that mean?
+
+Pat Sajak
+
+
+
+# GAME BEHAVIOR
+
+user 1 starts game by entering a word
+user 2 gets so many turns at guessing the letters and/or word
+word is updated with letters and displayed at each guess with ______ denoting length (also number of possible guesses)
+	correct letters by word length? in order to force word guess ?
