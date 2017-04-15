@@ -19,7 +19,7 @@ I'd like to guess the word Pat Sajak
 single_letter_guess
 can I get an 'n', Joe?
 
-"repeated guesses do not count against the user" what the fuck does that mean?
+"repeated guesses do not count against the user" ?
 
 Pat Sajak
 
