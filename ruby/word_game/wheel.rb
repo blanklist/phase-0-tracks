@@ -1,35 +1,41 @@
 class Guess
 
-  attr_accessor :correct_word, :user1_stats, :user2_stats, :in_progress_word
-  attr_reader :number_of_guesses
+  attr_accessor :correct_word, :in_progress_word, :number_of_guesses, :already_guessed, :guesses
 
 	def initialize(correct_word)
+    # states (updated continually):
+    # correct_word = [].join('')
 		@correct_word = correct_word
+    # in_progress_word = []
 		@in_progress_word = "_" * correct_word.length
+    # number of guesses
 		@number_of_guesses = correct_word.length * 2
-		@user1_stats = {is_dm: true, guesses: 0, available_guess: 0}
-		@user2_stats = {is_dm: false, guesses: 0, available_guess: @number_of_guesses}
-	end
-
-  def output_status
-  	p @correct_word, @in_progress_word, @user1_stats, @user2_stats, @correct_word.length * 2
+    # user info: number of guesses/available
+    #   guesser or word provider
+    @guesses = 0
+	  @already_guessed = []
   end
 
+  # behaviors: (methods)
+  def output_status
+  	p @correct_word, @in_progress_word, @number_of_guesses
+  end
+
+  # single_letter_guess
   def letter_guess(current_guess)
     i = 0
+    # "repeated guesses do not count against the user"
+    @guesses += 1 unless @already_guessed.include?(current_guess)
+    @already_guessed << current_guess
     while i < @correct_word.length
     	if @correct_word[i] == current_guess
     		@in_progress_word[i] = current_guess
     	end
     	i += 1
     end
-    if @user1_stats[:is_dm] = true
-    	@user2_stats[:guesses] += 1
-    	@user2_stats[:available_guess] -= 1
-    end
-    p @user2_stats
   end
 
+  # full_word_guess
   def word_guess(word)
   	if word == @correct_word
   		p "success! well done"
@@ -38,11 +44,11 @@ class Guess
   	end
   end
 
-
 end
 
-current_game = Guess.new("example")
-current_game.letter_guess("e")
-current_game.letter_guess("m")
-current_game.word_guess("rudabega")
-current_game.word_guess("example")
+# # GAME BEHAVIOR
+
+# user 1 starts game by entering a word
+# user 2 gets so many turns at guessing the letters and/or word
+# word is updated with letters and displayed at each guess with ______ denoting length (also number of possible guesses)
+#   correct letters by word length? in order to force word guess ?

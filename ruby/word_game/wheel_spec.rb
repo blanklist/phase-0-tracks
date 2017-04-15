@@ -3,7 +3,7 @@ require_relative 'wheel'
 describe Guess do
 	let(:current_game) { Guess.new("example") }
 
-	it "stores the correct word, in-progress word, number of guesses, and user stats upon initialization" do
+	it "stores the correct word, in-progress word, and number of guesses upon initialization" do
     expect(current_game.output_status).to include("example", "_______", 14)
 	end
 
