@@ -40,7 +40,7 @@ class Guess
   	if word != @correct_word
       p "Noop. Are you feeling alright?"
     else
-      p "Success! Well done"
+      p "Success! Well done!"
   	end
   end
 end
@@ -51,14 +51,14 @@ puts "\e[H\e[2J"
 p 'Welcome to The Word Guess Game!'
 p 'Guest 1, please cover your eyes.'
 # user 1 starts game by entering a word
-p 'Guest 2, please enter a word then press \'enter.'
+p 'Guest 2, please enter a word then press *enter*.'
 correct_word = gets.chomp
 
 our_game = Guess.new(correct_word)
 puts "\e[H\e[2J"
 
 # user 2 gets so many turns at guessing the letters and/or word
-p 'Okay! Guest 1, you have ' + our_game.number_of_guesses.to_s + ' letters to choose to help guess the word. Please enter a single letter then press \'enter\' to start: '
+p 'Okay! Guest 1, you have ' + our_game.number_of_guesses.to_s + ' letters to choose to help guess the word. Please enter a single letter then press *enter* to start: '
 player_guess = gets.chomp
 # word is updated with letters and displayed at each guess with ______ denoting length (also number of possible guesses)
 #   correct letters by word length? in order to force word guess ?
