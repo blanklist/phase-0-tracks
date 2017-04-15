@@ -40,9 +40,11 @@ class Guess
   # full_word_guess
   def word_guess(word)
   	if word != @correct_word
-      p "Noop. Are you feeling alright?"
+      puts "Noop. Are you feeling alright?"
+      return 'Noop. Are you feeling alright?'
     elsif word == @correct_word
-      p "Success! Well done!"
+      puts "Success! Well done!"
+      return 'Success! Well done!'
   	end
   end
 end
