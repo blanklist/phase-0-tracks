@@ -16,22 +16,23 @@ class VirusPredictor
     @population_density = population_density
   end
 
-  def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+  def virus_effects#(population_density, population, state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths#(population_density, population, state)
     # predicted deaths is solely based on population density
-    if @population_density >= 200
+    case
+    when @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
+    when @population_density >= 150
       number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
+    when @population_density >= 100
       number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
+    when @population_density >= 50
       number_of_deaths = (@population * 0.1).floor
     else
       number_of_deaths = (@population * 0.05).floor
@@ -41,7 +42,7 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread#(population_density, population, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
