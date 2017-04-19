@@ -15,9 +15,17 @@ function findLongest(arraryofStrings) {
   return longestStr;
 }
 
+
 // OBJECT MATCH
 
-var obj1 = {'YY': 'kitty', 'color': 'white', 'food': 'grosss'}
+// input: two objects. output: true if any key/value pairs match.
+// take each key of first object and compare to second object
+  // return false if no match
+// take key matches and compare value
+  // return true iff value match
+  // return false otherwise
+
+var obj1 = {'YY': 'kitty', 'color': 'white', 'food': 'gross'}
     obj2 = {'ShooShoo': 'kitty', 'color': 'black', 'food': 'gross'}
 
 // function to get keys of obj
@@ -44,16 +52,15 @@ function compareKeys(keys1, keys2) {
 function compareValues(obj1, obj2, matchedKeys) {
 	matchedValues = []
 	for (i=0; i<matchedKeys.length; i++) {
-		if (obj1[matchedKeys.i] === obj2[matchedKeys.i]) {
+		if (obj1[matchedKeys[i]] === obj2[matchedKeys[i]]) {
 			matchedValues.push(obj1[matchedKeys])
 		}
 	}
 }
 
-
 // function to check if any element in matched values array
 
-function anyKeyValueMatch(arr) {
+function hasMatch(arr) {
 	if (arr.length > 0) {
 		return true 
 		} else {
@@ -62,56 +69,15 @@ function anyKeyValueMatch(arr) {
 	console.log(arr)
 }
 
-compareKeys(getKeys(obj1), getKeys(obj2))
-console.log(getKeys(obj1))
-console.log(getKeys(obj2))
-console.log(matchedKeys)
-compareValues(obj1, obj2, matchedKeys)
-console.log(matchedValues)
-console.log(anyKeyValueMatch(matchedValues))
-
-
-
-
-// input: two objects. output: true if any key/value pairs match.
-// take each key of first object and compare to second object
-  // return false if no match
-// take key matches and compare value
-  // return true iff value match
-  // return false otherwise
-
-// var obj1KeyArr = Object.keys(obj1)
-//     obj2KeyArr = Object.keys(obj2)
-//     matchedKeys = []
-
-// for (i=0; i<obj1KeyArr.length; i++) {
-//   for (j=0; j<obj2KeyArr.length; j++) {
-//   	if (obj1KeyArr[i] == obj2KeyArr[j]) {
-//   		matchedKeys.push(obj1KeyArr[i])
-//   	}
-//   }	
-// }
-
-// var largestObj = null
-
-// if (obj1KeyArr.length > obj2KeyArr.length) {
-// 	largestObj = obj1
-// } else {
-// 	largestObj = obj2
-// }
-
-// function printValues(obj) {
-//   for (i in obj) {
-//   	console.log(obj[i])
-//   }
-// }
-
-// printValues(obj1)
 
 // DRIVER CODE
 
-// console.log(findLongest(['long string', 'longest string', 'longer string']))
-// console.log(findLongest(['something', 'this', 'that other thing']))
-// console.log(findLongest(['I\'m the first element', 'yeah, it is', 'short']))
+console.log(findLongest(['long string', 'longest string', 'longer string']))
+console.log(findLongest(['something', 'this', 'that other thing']))
+console.log(findLongest(['I\'m the first element', 'yeah, it is', 'short']))
 
+compareKeys(getKeys(obj1), getKeys(obj2))
+// console.log(hasMatch(matchedKeys))
+compareValues(obj1, obj2, matchedKeys)
+console.log(hasMatch(matchedValues))
 
