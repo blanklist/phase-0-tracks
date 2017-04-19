@@ -17,6 +17,62 @@ function findLongest(arraryofStrings) {
 
 // OBJECT MATCH
 
+var obj1 = {'YY': 'kitty', 'color': 'white', 'food': 'grosss'}
+    obj2 = {'ShooShoo': 'kitty', 'color': 'black', 'food': 'gross'}
+
+// function to get keys of obj
+
+function getKeys(obj) {
+  return Object.keys(obj)
+}
+
+// function to compare values
+
+function compareKeys(keys1, keys2) {
+  matchedKeys = []
+  for (i=0; i<keys1.length; i++) {
+  	for (j=0; j<keys2.length; j++) {
+  		if (keys1[i] === keys2[j]) {
+  			matchedKeys.push(keys1[i])
+  		}
+  	}
+  }
+}
+
+// function to compare values at matching keys
+
+function compareValues(obj1, obj2, matchedKeys) {
+	matchedValues = []
+	for (i=0; i<matchedKeys.length; i++) {
+		if (obj1[matchedKeys.i] === obj2[matchedKeys.i]) {
+			matchedValues.push(obj1[matchedKeys])
+		}
+	}
+}
+
+
+// function to check if any element in matched values array
+
+function anyKeyValueMatch(arr) {
+	if (arr.length > 0) {
+		return true 
+		} else {
+		return false
+	}
+	console.log(arr)
+}
+
+compareKeys(getKeys(obj1), getKeys(obj2))
+console.log(getKeys(obj1))
+console.log(getKeys(obj2))
+console.log(matchedKeys)
+compareValues(obj1, obj2, matchedKeys)
+console.log(matchedValues)
+console.log(anyKeyValueMatch(matchedValues))
+
+
+
+
 // input: two objects. output: true if any key/value pairs match.
 // take each key of first object and compare to second object
   // return false if no match
@@ -24,35 +80,33 @@ function findLongest(arraryofStrings) {
   // return true iff value match
   // return false otherwise
 
-var obj1 = {name: "Dan", something: 3444, age: 30, name: "Bill", else: 1234}
-var obj2 = {name: "Joe", age: 44, else: 1234, something: 3444}
+// var obj1KeyArr = Object.keys(obj1)
+//     obj2KeyArr = Object.keys(obj2)
+//     matchedKeys = []
 
-// console.log("age" in obj2 && "age" in obj1)
+// for (i=0; i<obj1KeyArr.length; i++) {
+//   for (j=0; j<obj2KeyArr.length; j++) {
+//   	if (obj1KeyArr[i] == obj2KeyArr[j]) {
+//   		matchedKeys.push(obj1KeyArr[i])
+//   	}
+//   }	
+// }
 
-var matchKeys = []
-for (var obj1key in obj1) {
-	for (var obj2key in obj2) {
-		if (obj1key == obj2key) {
-			matchKeys.push(obj1key)
-		}
-	}	
-}
+// var largestObj = null
 
-console.log(matchKeys)
+// if (obj1KeyArr.length > obj2KeyArr.length) {
+// 	largestObj = obj1
+// } else {
+// 	largestObj = obj2
+// }
 
-function matcher(){//(obj1, obj2, matchKeys) {
-	for (i=0; i<[obj1, obj2].max; i++) {
-		for (j=0; j<matchKeys.length; j++) {
-			if (obj1[matchKeys[i]] == obj2[matchKeys[j]]) {
-				return true
-			} else {
-				return false
-			}
-		}
-	}
-}
+// function printValues(obj) {
+//   for (i in obj) {
+//   	console.log(obj[i])
+//   }
+// }
 
-console.log(matcher())
+// printValues(obj1)
 
 // DRIVER CODE
 
