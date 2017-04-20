@@ -35,10 +35,8 @@ function getKeys(obj) {
   return Object.keys(obj)
 }
 
-var matchedKeys = []
-    matchedValues = []
 function compareKeys(keys1, keys2) {
-  // var matchedKeys = []
+  matchedKeys = []
   for (i=0; i<keys1.length; i++) {
   	for (j=0; j<keys2.length; j++) {
   		if (keys1[i] === keys2[j]) {
@@ -46,19 +44,17 @@ function compareKeys(keys1, keys2) {
   		}
   	}
   }
-  return matchedKeys
 }
 
 // function to compare values at matching keys
 
 function compareValues(obj1, obj2, matchedKeys) {
-	var matchedValues = []
+	matchedValues = []
 	for (i=0; i<matchedKeys.length; i++) {
 		if (obj1[matchedKeys[i]] === obj2[matchedKeys[i]]) {
 			matchedValues.push(obj1[matchedKeys])
 		}
 	}
-	return matchedValues
 }
 
 // function to check if any element in matched values array
@@ -71,6 +67,9 @@ function hasMatch(arr) {
 	}
 	console.log(arr)
 }
+
+
+
 
 
 // GENERATE RANDOM ARRAY
