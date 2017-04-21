@@ -52,7 +52,7 @@ function compareValues(obj1, obj2, matchedKeys) {
 	matchedValues = []
 	for (i=0; i<matchedKeys.length; i++) {
 		if (obj1[matchedKeys[i]] === obj2[matchedKeys[i]]) {
-			matchedValues.push(obj1[matchedKeys])
+			matchedValues.push(obj1[matchedKeys[i]])
 		}
 	}
 }
@@ -61,15 +61,19 @@ function compareValues(obj1, obj2, matchedKeys) {
 
 function hasMatch(arr) {
 	if (arr.length > 0) {
-		return true 
-		} else {
-		return false
-	}
-	console.log(arr)
+	  return true;
+	} else {
+    return false;
+  }
 }
 
+// function to bring everything together (two objects being processed)
 
-
+function compareKeyValues(obj1, obj2) {
+  compareKeys(getKeys(obj1), getKeys(obj2))
+  compareValues(obj1, obj2, matchedKeys)
+  return hasMatch(matchedValues)
+}
 
 
 // GENERATE RANDOM ARRAY
@@ -111,13 +115,12 @@ function arrayGenerator(numberOfElements) {
 console.log(findLongest(['long string', 'longest string', 'longer string']))
 console.log(findLongest(['I\'m the first element', 'yeah, it is', 'short']))
 
-compareKeys(getKeys(obj1), getKeys(obj2))
-// console.log(hasMatch(matchedKeys))
-compareValues(obj1, obj2, matchedKeys)
-console.log(hasMatch(matchedValues))
+console.log(compareKeyValues(obj1, obj2))
+console.log(compareKeyValues(obj2, obj3))
 
-compareKeys(getKeys(obj2), getKeys(obj3))
-// console.log(hasMatch(matchedKeys))
-compareValues(obj2, obj3, matchedKeys)
-console.log(hasMatch(matchedValues))
-
+while (i<11) {
+  var arr = arrayGenerator(i)
+  console.log(arr)
+  console.log(findLongest(arr))
+  i++
+}
