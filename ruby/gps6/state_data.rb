@@ -1,6 +1,9 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
 
+# The Hashy Hash - hashes all the way down
+# All caps for a constant, intended to not change its state. Caps are a convention, a constant need only be capitalized.
+
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
