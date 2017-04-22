@@ -15,7 +15,10 @@ function findLongest(arraryofStrings) {
   return longestStr;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> c487ea9dc7838dbdf684d2dcebeaaf6d2230b9e4
 // OBJECT MATCH
 
 // input: two objects. output: true if any key/value pairs match.
@@ -25,6 +28,32 @@ function findLongest(arraryofStrings) {
   // return true iff value match
   // return false otherwise
 
+<<<<<<< HEAD
+var obj1 = {name: "Dan", something: 3444, age: 30, name: "Bill", else: 1234}
+var obj2 = {name: "Joe", age: 44, else: 1234, something: 3444}
+
+// console.log("age" in obj2 && "age" in obj1)
+
+var matchKeys = []
+for (var obj1key in obj1) {
+	for (var obj2key in obj2) {
+		if (obj1key == obj2key) {
+			matchKeys.push(obj1key)
+		}
+	}	
+}
+
+console.log(matchKeys)
+
+function matcher(){//(obj1, obj2, matchKeys) {
+	for (i=0; i<[obj1, obj2].max; i++) {
+		for (j=0; j<matchKeys.length; j++) {
+			if (obj1[matchKeys[i]] == obj2[matchKeys[j]]) {
+				return true
+			} else {
+				return false
+			}
+=======
 var obj1 = {'YY': 'kitty', 'color': 'white', 'food': 'gross'}
     obj2 = {'ShooShoo': 'kitty', 'color': 'black', 'food': 'gross'}
     obj3 = {'YY': 'kitty', 'color': 'white', 'meow': 'hella'}
@@ -53,10 +82,22 @@ function compareValues(obj1, obj2, matchedKeys) {
 	for (i=0; i<matchedKeys.length; i++) {
 		if (obj1[matchedKeys[i]] === obj2[matchedKeys[i]]) {
 			matchedValues.push(obj1[matchedKeys[i]])
+>>>>>>> c487ea9dc7838dbdf684d2dcebeaaf6d2230b9e4
 		}
 	}
 }
 
+<<<<<<< HEAD
+console.log(matcher())
+
+// DRIVER CODE
+
+// console.log(findLongest(['long string', 'longest string', 'longer string']))
+// console.log(findLongest(['something', 'this', 'that other thing']))
+// console.log(findLongest(['I\'m the first element', 'yeah, it is', 'short']))
+
+
+=======
 // function to check if any element in matched values array
 
 function hasMatch(arr) {
@@ -124,3 +165,4 @@ while (i<11) {
   console.log(findLongest(arr))
   i++
 }
+>>>>>>> c487ea9dc7838dbdf684d2dcebeaaf6d2230b9e4
