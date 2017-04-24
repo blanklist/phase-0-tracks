@@ -24,3 +24,14 @@ sqlite> SELECT * FROM cat;
 2|ShooShoo|1|true|1
 3|Zydeko|5|true|2
 
+sqlite> SELECT * FROM cat FULL OUTER JOIN breed ON cat.breed_id = breed.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+sqlite> SELECT cat.name, cat.age FROM cat LEFT JOIN breed ON cat.age = breed.id;
+ShooShoo|1
+Zydeko|5
+Y-Y!|1
+Muffins|8
+
+sqlite> SELECT breed.breed FROM breed RIGHT JOIN cat ON breed.id = cat.breed_id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
