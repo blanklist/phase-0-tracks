@@ -41,22 +41,30 @@ valve_calculator_db.execute("INSERT OR IGNORE INTO int_exh (int_exh) SELECT ('ex
 
 cylinder_arr = ['2a', '1a', '2b', '1b', '4a', '3a', '4b', '3b']
 cylinder_arr.each_with_index do |position, index|
-	valve_calculator_db.execute("INSERT INTO cyl (cyl) VALUES ('#{position}')")
+	valve_calculator_db.execute("INSERT OR IGNORE INTO cyl (cyl) SELECT ('#{position}') WHERE NOT EXISTS (SELECT 1 FROM cyl WHERE cyl = ('#{position}'))")
 	if position == '2a' || position == '2b' || position == '4a' || position == '4b'
-		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
-		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
+		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 2) WHERE NOT EXISTS (SELECT * FROM measurements WHERE clr = 0, shim = 0, ideal = 0, cyl_id = #{index} + 1, int_exh = 2")
+		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 1) WHERE NOT EXISTS (SELECT 1 FROM measurements WHERE clr = 0")
 	elsif position == '1a' || position == '1b' || position == '3a' || position == '3b'
-		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
-		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
-	end	
+		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 1) WHERE NOT EXISTS (SELECT 1 FROM measurements WHERE clr = 0")
+		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 2) WHERE NOT EXISTS (SELECT 1 FROM measurements WHERE clr = 0")
+	end
 end
-
 
 ## USER INTERACTION ##
 
 # prompt user for intake or exhaust and cylinder position
 	# "Please input cylinder position and intake and exhaust using the format: '1a int' or '3b exh'"
 
+puts "\e[H\e[2J"
+puts "Welcome to the Valve Shim Calculator."
+puts "Please input cylinder position and intake or exhasut using the following format: '1a int' or '3b exh':"
+position_arr = gets.chomp.split(' ')
+cyl_position = position_arr[0]
+int_exh = position_arr[1]
+p position_arr
+p cyl_position
+p int_exh
 
 
 
