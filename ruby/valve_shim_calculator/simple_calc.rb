@@ -40,16 +40,20 @@ valve_calculator_db.execute("INSERT OR IGNORE INTO int_exh (int_exh) SELECT ('in
 valve_calculator_db.execute("INSERT OR IGNORE INTO int_exh (int_exh) SELECT ('exh') WHERE NOT EXISTS (SELECT 1 FROM int_exh WHERE int_exh = 'exh')")
 
 cylinder_arr = ['2a', '1a', '2b', '1b', '4a', '3a', '4b', '3b']
-cylinder_arr.each_with_index do |position, index|
-	valve_calculator_db.execute("INSERT OR IGNORE INTO cyl (cyl) SELECT ('#{position}') WHERE NOT EXISTS (SELECT 1 FROM cyl WHERE cyl = ('#{position}'))")
-	if position == '2a' || position == '2b' || position == '4a' || position == '4b'
-		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 2) WHERE NOT EXISTS (SELECT * FROM measurements WHERE clr = 0, shim = 0, ideal = 0, cyl_id = #{index} + 1, int_exh = 2")
-		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 1) WHERE NOT EXISTS (SELECT 1 FROM measurements WHERE clr = 0")
-	elsif position == '1a' || position == '1b' || position == '3a' || position == '3b'
-		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 1) WHERE NOT EXISTS (SELECT 1 FROM measurements WHERE clr = 0")
-		valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) SELECT (0, 0, 0, #{index} + 1, 2) WHERE NOT EXISTS (SELECT 1 FROM measurements WHERE clr = 0")
-	end
+def populate_dummy_table(cylinder_arr, valve_calculator_db)
+	cylinder_arr.each_with_index do |position, index|
+		valve_calculator_db.execute("INSERT INTO cyl (cyl) VALUES ('#{position}')")
+		if position == '2a' || position == '2b' || position == '4a' || position == '4b'
+			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
+			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
+		elsif position == '1a' || position == '1b' || position == '3a' || position == '3b'
+			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
+			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
+		end
+  end	
 end
+
+populate_dummy_table(cylinder_arr, valve_calculator_db);
 
 ## USER INTERACTION ##
 
