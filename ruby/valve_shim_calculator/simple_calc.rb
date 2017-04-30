@@ -40,20 +40,17 @@ valve_calculator_db.execute("INSERT OR IGNORE INTO int_exh (int_exh) SELECT ('in
 valve_calculator_db.execute("INSERT OR IGNORE INTO int_exh (int_exh) SELECT ('exh') WHERE NOT EXISTS (SELECT 1 FROM int_exh WHERE int_exh = 'exh')")
 
 cylinder_arr = ['2a', '1a', '2b', '1b', '4a', '3a', '4b', '3b']
-def populate_dummy_table(cylinder_arr, valve_calculator_db)
-	cylinder_arr.each_with_index do |position, index|
-		valve_calculator_db.execute("INSERT INTO cyl (cyl) VALUES ('#{position}')")
-		if position == '2a' || position == '2b' || position == '4a' || position == '4b'
-			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
-			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
-		elsif position == '1a' || position == '1b' || position == '3a' || position == '3b'
-			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
-			valve_calculator_db.execute("INSERT OR IGNORE INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
-		end
-  end	
-end
+cylinder_arr.each_with_index do |position, index|
+	valve_calculator_db.execute("INSERT OR IGNORE INTO cyl (cyl) SELECT ('#{position}') WHERE NOT EXISTS (SELECT 1 FROM cyl WHERE cyl = '#{position}')")
+	if position == '2a' || position == '2b' || position == '4a' || position == '4b'
+		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
+		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
+	elsif position == '1a' || position == '1b' || position == '3a' || position == '3b'
+		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 1)")
+		valve_calculator_db.execute("INSERT INTO measurements (clr, shim, ideal, cyl_id, int_exh_id) VALUES (0, 0, 0, #{index} + 1, 2)")
+	end
+end	
 
-populate_dummy_table(cylinder_arr, valve_calculator_db);
 
 ## USER INTERACTION ##
 
@@ -66,21 +63,26 @@ puts "Please input cylinder position and intake or exhasut using the following f
 position_arr = gets.chomp.split(' ')
 cyl_position = position_arr[0]
 int_exh = position_arr[1]
-p position_arr
-p cyl_position
-p int_exh
-
-
 
 # prompt user for clearance
   # "what is the clearance at [location]"
+puts "What is the measured clearance at #{cyl_position} #{int_exh}?"		
+clearance = gets.chomp.to_f
+position_translation = valve_calculator_db.execute("SELECT cyl FROM cyl WHERE cyl = '#{cyl_position}'")
+p position_translation[0][0]
+
+
+valve_calculator_db.execute("UPDATE measurements SET clr = #{clearance} WHERE cyl_id = ")
 
 # prompt user for shim size
 	# "what is the shim size at [location]"
+puts "What is the current shim size at #{cyl_position} #{int_exh}?"
+shim = gets.chomp.to_f
 
 # calculate and return ideal shim size
 	# "this is the ideal shim size for [location] based on this calculation: [calculation]"
-
+ideal = clearance * shim
+puts "The ideal shim size for #{cyl_position} #{int_exh} is: #{ideal}"
 
 
 
