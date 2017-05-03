@@ -1,0 +1,3 @@
+Find general introductory resources concerning jquery. First to find a definition of jquery then to find examples of methods. I will learn quickly by doing so will want to run the methods as I read on them. 
+
+I found the W3Schools tutorial helpful and worked from that for much of my project. I needed to, and intentionally so, adjust examples to fit my intentions. When things were getting stuck I googled the specific task I was trying to perform and ended up on stack overflow for some not-quite-specific help. Things worked out, I accomplished most of what I set out to do. The animate function was tricky in that I couldn't seem to change more than one aspect of the element.
