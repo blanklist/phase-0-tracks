@@ -25,3 +25,13 @@ post '/students' do
 end
 
 # add static resources
+
+# Pairing 9.5
+get '/birthday' do
+  erb :birthday
+end
+
+post '/birthday' do
+  db.execute("UPDATE students SET age=? WHERE name=?", [params['age'].to_i, [params['name']]])
+  redirect '/'
+end
