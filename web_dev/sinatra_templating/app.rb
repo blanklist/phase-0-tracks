@@ -25,3 +25,6 @@ post '/students' do
 end
 
 # add static resources
+
+# Pairing 9.5
+get '/'
