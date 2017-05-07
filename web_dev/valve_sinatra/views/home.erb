@@ -5,6 +5,151 @@
 </head>
 <body>
   <h1>Valve Shim Calculator for Subaru FA/FB Engines</h1>
-  <p><%= @values %></p>
+    <table>
+    	<thead>
+    		<tr>
+    			<th></th>
+    			<th scope='col'>exhaust</th>
+    			<th></th>
+    			<th scope='col'>intake</th>
+    			<th scope='col'>intake</th>
+    			<th></th>
+    			<th scope='col'>exhaust</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<th scope='row'>clearance</th>
+    			<td><%= @clearance[0][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[1][0] %></td>
+    			<td><%= @clearance[2][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[3][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>shim</th>
+    			<td><%= @shim[0][0] %></td>
+    			<td>Cyl 2</td>
+    			<td><%= @shim[1][0] %></td>
+    			<td><%= @shim[2][0] %></td>
+    			<td>Cyl 1</td>
+    			<td><%= @shim[3][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>ideal</th>
+    			<td><%= @ideal[0][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[1][0] %></td>
+    			<td><%= @ideal[2][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[3][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>clearance</th>
+    			<td><%= @clearance[4][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[5][0] %></td>
+    			<td><%= @clearance[6][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[7][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>shim</th>
+    			<td><%= @shim[4][0] %></td>
+    			<td>Cyl 2</td>
+    			<td><%= @shim[5][0] %></td>
+    			<td><%= @shim[6][0] %></td>
+    			<td>Cyl 1</td>
+    			<td><%= @shim[7][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>ideal</th>
+    			<td><%= @ideal[4][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[5][0] %></td>
+    			<td><%= @ideal[6][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[7][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>clearance</th>
+    			<td><%= @clearance[8][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[9][0] %></td>
+    			<td><%= @clearance[10][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[11][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>shim</th>
+    			<td><%= @shim[8][0] %></td>
+    			<td>Cyl 4</td>
+    			<td><%= @shim[9][0] %></td>
+    			<td><%= @shim[10][0] %></td>
+    			<td>Cyl 3</td>
+    			<td><%= @shim[11][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>ideal</th>
+    			<td><%= @ideal[8][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[9][0] %></td>
+    			<td><%= @ideal[10][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[11][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>clearance</th>
+    			<td><%= @clearance[12][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[13][0] %></td>
+    			<td><%= @clearance[14][0] %></td>
+    			<td></td>
+    			<td><%= @clearance[15][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>shim</th>
+    			<td><%= @shim[12][0] %></td>
+    			<td>Cyl 4</td>
+    			<td><%= @shim[13][0] %></td>
+    			<td><%= @shim[14][0] %></td>
+    			<td>Cyl 3</td>
+    			<td><%= @shim[15][0] %></td>
+    		</tr>
+    		<tr>
+    			<th scope='row'>ideal</th>
+    			<td><%= @ideal[12][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[13][0] %></td>
+    			<td><%= @ideal[14][0] %></td>
+    			<td></td>
+    			<td><%= @ideal[15][0] %></td>
+    		</tr>
+    	</tbody>
+    </table>
+
+  <h2>Input or update Measurements</h2>
+  <form action='/' method='POST'>
+    <select name='location'>
+    	<option value='1a'>1a</option>
+    	<option value='1b'>1b</option>
+    	<option value='2a'>2a</option>
+    	<option value='2b'>2b</option>
+    	<option value='3a'>3a</option>
+    	<option value='3b'>3b</option>
+    	<option value='4a'>4a</option>
+    	<option value='4b'>4b</option>
+    </select>
+    <select name='intake/exhaust'>
+    	<option value='intake'>intake</option>
+    	<option value='exhaust'>exhaust</option>
+    </select>
+    <input type='text' name='clearance' placeholder='clearance'>
+    <input type='text' name='shim' placeholder='shim'>
+    <button type='submit'>Save</button>
+  </form>
+
+
 </body>
 </html>
