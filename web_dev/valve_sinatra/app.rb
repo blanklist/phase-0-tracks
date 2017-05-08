@@ -3,6 +3,8 @@ require 'sqlite3'
 
 valve_db = SQLite3::Database.new("calculator.db")
 
+set :public_folder, File.dirname(__FILE__) + '/public'
+
 get '/' do
 	# @values = valve_db.execute("SELECT * FROM measurements")
 	@clearance = valve_db.execute("SELECT clr FROM measurements")
