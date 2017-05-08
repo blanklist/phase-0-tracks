@@ -19,8 +19,8 @@ end
 
 post '/update' do
 	p params
-	# valve_db.execute("UPDATE measurements SET clr=?, shim=? WHERE cylinder=? AND int_exh=?", [params['clearance'].to_i, params['shim'].to_i, params['location'], params['int_exh']])
-	valve_db.execute("UPDATE measurements SET clr=? WHERE cylinder=?", [params['clearance'].to_i, params['location']])
+	valve_db.execute("UPDATE measurements SET clr=?, shim=? WHERE cylinder=? AND int_exh=?", [params['clearance'], params['shim'], params['location'], params['valve']])
+	# valve_db.execute("UPDATE measurements SET clr=? WHERE cylinder=?", [params['clearance'].to_i, params['location']])
 
   redirect '/'
 end
